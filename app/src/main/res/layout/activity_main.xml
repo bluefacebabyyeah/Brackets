@@ -27,6 +27,7 @@
         android:padding="5dp"
         >
         <Button
+            android:id="@+id/buttonAddPlainLeft"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -35,6 +36,7 @@
             />
 
         <Button
+            android:id="@+id/buttonAddPlainRight"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -52,6 +54,7 @@
         android:padding="5dp"
         >
         <Button
+            android:id="@+id/buttonAddBoxLeft"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -59,6 +62,7 @@
             android:text="Add '['"
             />
         <Button
+            android:id="@+id/buttonAddBoxRight"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -76,6 +80,7 @@
         android:padding="5dp"
         >
         <Button
+            android:id="@+id/buttonAddCurlyLeft"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -83,6 +88,7 @@
             android:text="Add '{'"
             />
         <Button
+            android:id="@+id/buttonAddCurlyRight"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -100,12 +106,14 @@
         android:background="@color/teal_200"
         >
         <Button
+            android:id="@+id/buttonClear"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Clear"
             />
         <Button
+            android:id="@+id/buttonClearAll"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -114,20 +122,22 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textViewInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:text="Input: 'XXXX'"
+        android:text="Input: empty"
         android:textSize="20sp"
         android:textStyle="bold"
         />
     <TextView
+        android:id="@+id/textViewOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:text="Output: '???'"
+        android:text="Output: true"
         android:textSize="20sp"
         android:textStyle="bold"
         />

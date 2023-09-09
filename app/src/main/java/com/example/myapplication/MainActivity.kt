@@ -1,24 +1,74 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
-import com.example.myapplication.ui.theme.MyApplicationTheme
+import com.example.myapplication.databinding.ActivityMainBinding
 import java.util.Stack
 
 class MainActivity : ComponentActivity() {
+    private lateinit var binding:ActivityMainBinding
+    private fun updateInput(input: String){
+        binding.textViewInput.text = "Input: $input"
+    }
+    private fun updateOutput(value: Boolean){
+        binding.textViewOutput.text = "Output: $value"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val input = "()[]{}"  // строку с инпутом можешь менять
-        val result = parse(input)
-        Toast.makeText(this, "Input = $input\nAnswer = $result", Toast.LENGTH_LONG).show()
+        var input = "";
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.buttonAddPlainLeft.setOnClickListener{
+            input+="("
+            updateInput(input)
+            var result = parse(input)
+            updateOutput(result)
+        }
+        binding.buttonAddPlainRight.setOnClickListener{
+            input+=")"
+            updateInput(input)
+            var result = parse(input)
+            updateOutput(result)
+        }
+        binding.buttonAddBoxLeft.setOnClickListener{
+            input+="["
+            updateInput(input)
+            var result = parse(input)
+            updateOutput(result)
+        }
+        binding.buttonAddBoxRight.setOnClickListener {
+            input+="]"
+            updateInput(input)
+            var result = parse(input)
+            updateOutput(result)
+        }
+        binding.buttonAddCurlyLeft.setOnClickListener {
+            input+="{"
+            updateInput(input)
+            var result = parse(input)
+            updateOutput(result)
+        }
+        binding.buttonAddCurlyRight.setOnClickListener {
+            input+="}"
+            updateInput(input)
+            var result = parse(input)
+            updateOutput(result)
+        }
+        binding.buttonClear.setOnClickListener {
+            if (input.isEmpty())
+                return@setOnClickListener
+            input = input.substring(0,input.length-1)
+            updateInput(input)
+            var result = parse(input)
+            updateOutput(result)
+        }
+        binding.buttonClearAll.setOnClickListener {
+            input = ""
+            updateInput(input)
+            var result = parse(input)
+            updateOutput(result)
+        }
     }
     private fun parse(input: String) : Boolean {
         val stack = Stack<String>()
