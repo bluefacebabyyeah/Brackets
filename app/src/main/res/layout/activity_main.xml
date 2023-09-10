@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4d6fa8"
-    android:layout_margin="10dp"
-    >
+    android:layout_margin="10dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@color/teal_200"
         android:padding="5dp"
@@ -74,7 +74,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@color/teal_200"
         android:padding="5dp"
@@ -101,7 +101,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@color/teal_200"
         >
@@ -120,25 +120,44 @@
             android:text="Clear All"
             />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
 
-    <TextView
-        android:id="@+id/textViewInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:text="Input: empty"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        >
+        <TextView
+            android:id="@+id/textViewInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Input: empty"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+
+            />
+        <Button
+            android:id="@+id/buttonParse"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Parse"
+            android:textAllCaps="false"
         />
-    <TextView
-        android:id="@+id/textViewOutput"
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewInputOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        tools:listitem="@layout/item_view"
+        android:layout_margin="10dp"
         android:layout_gravity="center"
-        android:text="Output: true"
-        android:textSize="20sp"
-        android:textStyle="bold"
         />
 </LinearLayout>
